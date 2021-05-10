@@ -44,6 +44,7 @@ We recommend setting up a Python 3.7 and Pytorch 1.0 Virtual Environment and ins
 
 ```plain
 git clone https://github.com/JonDoe-297/cross-view.git
+
 cd cross-view
 pip install -r requirements.txt
 ```
@@ -54,10 +55,13 @@ In the paper, we've presented results for KITTI 3Dobject, KITTI Odometry, KITTI 
 ```plain
 # Download KITTI RAW
 ./data/download_datasets.sh raw
+
 # Download KITTI 3D Object
 ./data/download_datasets.sh object
+
 # Download KITTI Odometry
 ./data/download_datasets.sh odometry
+
 # Download Argoverse Tracking v1.0
 ./data/download_datasets.sh argoverse
 ```
@@ -93,12 +97,16 @@ datasets/
 ```plain
 # Corss view Static (KITTI Odometry)
 python3 train.py --type static --split odometry --data_path ./datasets/odometry/ --model_name <Model Name with specifications>
+
 # Corss view Dynamic (KITTI 3DObject)
 python3 train.py --type dynamic --split 3Dobject --data_path ./datasets/kitti/object/training --model_name <Model Name with specifications>
+
 # Corss view Static (KITTI RAW)
 python3 train.py --type static --split raw --data_path ./datasets/kitti/raw/  --model_name <Model Name with specifications>
+
 # Corss view Dynamic (Argoverse Tracking v1.0)
 python3 train.py --type dynamic --split argo --data_path ./datasets/argoverse/ --model_name <Model Name with specifications>
+
 # Corss view Static (Argoverse Tracking v1.0)
 python3 train.py --type static --split argo --data_path ./datasets/argoverse/ --model_name <Model Name with specifications>
 ```
@@ -119,12 +127,16 @@ python3 test.py --type <static/dynamic> --model_path <path to the model director
 ```plain
 # Evaluate on KITTI Odometry 
 python3 eval.py --type static --split odometry --model_path <path to the model directory> --data_path ./datasets/odometry --height 512 --width 512 --occ_map_size 128
+
 # Evaluate on KITTI 3DObject
 python3 eval.py --type dynamic --split 3Dobject --model_path <path to the model directory> --data_path ./datasets/kitti/object/training
+
 # Evaluate on KITTI RAW
 python3 eval.py --type static --split raw --model_path <path to the model directory> --data_path ./datasets/kitti/raw/
+
 # Evaluate on Argoverse Tracking v1.0 (Static)
 python3 eval.py --type static --split argo --model_path <path to the model directory> --data_path ./datasets/kitti/argoverse/
+
 # Evaluate on Argoverse Tracking v1.0 (Dynamic)
 python3 eval.py --type dynamic --split argo --model_path <path to the model directory> --data_path ./datasets/kitti/argoverse
 ```
