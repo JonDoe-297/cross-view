@@ -49,7 +49,7 @@ pip install -r requirements.txt
 ```
 ## Datasets
 
-In the paper, we've presented results for KITTI 3Dobject, KITTI Odometry, KITTI RAW, and Argoverse 3D Tracking v1.0 datasets. For comparison with [Schulter et. al.](https://cseweb.ucsd.edu/~mkchandraker/pdf/eccv18_occlusionreasoning.pdf?fileGuid=3X8QJDGGJPXyQgW9), We've used the same training and test splits sequences from the KITTI RAW dataset. For more details about the training/testing splits one can look at the`splits`directory. And you can download Ground-true from [Monolayout](https://github.com/hbutsuak95/monolayout?fileGuid=3X8QJDGGJPXyQgW9).
+In the paper, we've presented results for KITTI 3Dobject, KITTI Odometry, KITTI RAW, and Argoverse 3D Tracking v1.0 datasets. For comparison with [Schulter et. al.](https://cseweb.ucsd.edu/~mkchandraker/pdf/eccv18_occlusionreasoning.pdf?fileGuid=3X8QJDGGJPXyQgW9), We've used the same training and test splits sequences from the KITTI RAW dataset. For more details about the training/testing splits one can look at the `splits` directory. And you can download Ground-true from [Monolayout](https://github.com/hbutsuak95/monolayout?fileGuid=3X8QJDGGJPXyQgW9).
 
 ```plain
 # Download KITTI RAW
@@ -61,7 +61,7 @@ In the paper, we've presented results for KITTI 3Dobject, KITTI Odometry, KITTI 
 # Download Argoverse Tracking v1.0
 ./data/download_datasets.sh argoverse
 ```
-The above scripts will download, unzip and store the respective datasets in the`datasets`directory.
+The above scripts will download, unzip and store the respective datasets in the `datasets` directory.
 ```plain
 datasets/
 └── argoverse                          # argoverse dataset
@@ -71,13 +71,6 @@ datasets/
                 ├── car_bev_gt         # Vehicle GT
                 ├── road_gt            # Road GT
                 ├── stereo_front_left  # RGB image
-            .
-            .
-            .
-        ├── train2
-        ├── train3
-        ├── train4
-        ├── val
 └── kitti                              # kitti dataset 
     └── object                         # kitti 3Dobject dataset 
         └── training
@@ -87,18 +80,11 @@ datasets/
         └── 00
             ├── image_2                # RGB image
             ├── road_dense128  # Road GT
-        .
-        .
-        .
     ├── raw                            # kitti raw dataset 
         └── 2011_09_26
             └── 2011_09_26_drive_0001_sync
                 ├── image_2            # RGB image
                 ├── road_dense128      # Road GT
-            .
-            .
-            .
-        └── 2011_10_03
 ```
 ## Training
 
@@ -156,8 +142,6 @@ The following table provides links to the [pre-trained models](https://drive.goo
 | Argoverse Tracking | Dynamic    |  76.56  | 87.30 | [link](https://drive.google.com/drive/folders/1w5aTi0XQYbg3myWlmy89knA0gtp6fced?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
 
 ## Results
-
 ![图片](./images/result.png)
-
 
 
