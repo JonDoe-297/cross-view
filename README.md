@@ -134,7 +134,7 @@ python3 eval.py --type dynamic --split argo --model_path <path to the model dire
 The following table provides links to the [pre-trained models](https://drive.google.com/drive/folders/1PK9yiKdsXmoH53xP-As0h5n0LyBSgTGN?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) for each dataset mentioned in our paper. The table also shows the corresponding evaluation results for these models.
 
 | Dataset            | Model Type | mIOU(%) | mAP(%)| Pretrained Model                                                                                                       | 
-| --------           | -----:     | ----:   | ----: | :----:                                                                                                                 |
+| :--------:           | :-----:     | :----:   | :----: | :----:                                                                                                                 |
 | KITTI 3DObject     | Dynamic    |  38.85  | 51.04 | [link](https://drive.google.com/drive/folders/1XipKf-fLdpikyuQrSjWVrI_TIiZFy7HO?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
 | KITTI Odometry     | Static     |  77.47  | 86.39 | [link](https://drive.google.com/drive/folders/1eQmDOvI6_iWKRaILAJ2XMA-GmlyjkgX1?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
 | KITTI Raw          | Static     |  68.26  | 79.65 | [link](https://drive.google.com/drive/folders/1VuwZtN9IPtKIAya9N_33WWVMfW8HOzu5?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
@@ -144,4 +144,8 @@ The following table provides links to the [pre-trained models](https://drive.goo
 ## Results
 ![图片](./images/result.png)
 
-
+<style>
+table {
+margin: auto;
+}
+</style>
