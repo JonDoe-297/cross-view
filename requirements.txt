@@ -1,0 +1,10 @@
+opencv_python==4.1.1.26
+torch==1.0.0
+easydict==1.9
+torchvision==0.2.1
+scipy==1.4.1
+numpy==1.18.5
+matplotlib==3.2.2
+tqdm==4.36.1
+Pillow==6.2.0
+tensorboardX==2.1
