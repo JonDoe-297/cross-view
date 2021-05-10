@@ -30,7 +30,7 @@ cross-view/
     ├── kitti            # kitti dataset 
 ├── log                  # Contains a log of network/model
 ├── losses               # Contains scripts for loss of network/model
-├── models              # Contains the saved model of the network/model
+├── models               # Contains the saved model of the network/model
 ├── output               # Contains output of network/model
 └── splits
     ├── 3Dobject         # Training and testing splits for KITTI 3DObject Detection dataset 
