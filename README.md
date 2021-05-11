@@ -155,9 +155,3 @@ The following table provides links to the [pre-trained models](https://drive.goo
 
 ## Results
 ![图片](./images/result.png)
-
-<style>
-table {
-margin: auto;
-}
-</style>
