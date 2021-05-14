@@ -50,7 +50,7 @@ pip install -r requirements.txt
 ```
 ## Datasets
 
-In the paper, we've presented results for KITTI 3Dobject, KITTI Odometry, KITTI RAW, and Argoverse 3D Tracking v1.0 datasets. For comparison with [Schulter et. al.](https://cseweb.ucsd.edu/~mkchandraker/pdf/eccv18_occlusionreasoning.pdf?fileGuid=3X8QJDGGJPXyQgW9), We've used the same training and test splits sequences from the KITTI RAW dataset. For more details about the training/testing splits one can look at the `splits` directory. And you can download Ground-true from [Monolayout](https://github.com/hbutsuak95/monolayout?fileGuid=3X8QJDGGJPXyQgW9).
+In the paper, we've presented results for KITTI 3D Object, KITTI Odometry, KITTI RAW, and Argoverse 3D Tracking v1.0 datasets. For comparison with [Schulter et. al.](https://cseweb.ucsd.edu/~mkchandraker/pdf/eccv18_occlusionreasoning.pdf?fileGuid=3X8QJDGGJPXyQgW9), We've used the same training and test splits sequences from the KITTI RAW dataset. For more details about the training/testing splits one can look at the `splits` directory. And you can download Ground-truth from [Monolayout](https://github.com/hbutsuak95/monolayout?fileGuid=3X8QJDGGJPXyQgW9).
 
 ```plain
 # Download KITTI RAW
@@ -76,7 +76,7 @@ datasets/
                 ├── road_gt            # Road GT
                 ├── stereo_front_left  # RGB image
 └── kitti                              # kitti dataset 
-    └── object                         # kitti 3Dobject dataset 
+    └── object                         # kitti 3D Object dataset 
         └── training
             ├── image_2                # RGB image
             ├── vehicle_256            # Vehicle GT
@@ -95,19 +95,19 @@ datasets/
 1. Prepare the corresponding dataset
 2. Run training
 ```plain
-# Corss view Static (KITTI Odometry)
+# Corss view Road (KITTI Odometry)
 python3 train.py --type static --split odometry --data_path ./datasets/odometry/ --model_name <Model Name with specifications>
 
-# Corss view Dynamic (KITTI 3DObject)
+# Corss view Vehicle (KITTI 3D Object)
 python3 train.py --type dynamic --split 3Dobject --data_path ./datasets/kitti/object/training --model_name <Model Name with specifications>
 
-# Corss view Static (KITTI RAW)
+# Corss view Road (KITTI RAW)
 python3 train.py --type static --split raw --data_path ./datasets/kitti/raw/  --model_name <Model Name with specifications>
 
-# Corss view Dynamic (Argoverse Tracking v1.0)
+# Corss view Vehicle (Argoverse Tracking v1.0)
 python3 train.py --type dynamic --split argo --data_path ./datasets/argoverse/ --model_name <Model Name with specifications>
 
-# Corss view Static (Argoverse Tracking v1.0)
+# Corss view Road (Argoverse Tracking v1.0)
 python3 train.py --type static --split argo --data_path ./datasets/argoverse/ --model_name <Model Name with specifications>
 ```
 3. The training model are in "models" (default: ./models)
@@ -128,16 +128,16 @@ python3 test.py --type <static/dynamic> --model_path <path to the model director
 # Evaluate on KITTI Odometry 
 python3 eval.py --type static --split odometry --model_path <path to the model directory> --data_path ./datasets/odometry --height 512 --width 512 --occ_map_size 128
 
-# Evaluate on KITTI 3DObject
+# Evaluate on KITTI 3D Object
 python3 eval.py --type dynamic --split 3Dobject --model_path <path to the model directory> --data_path ./datasets/kitti/object/training
 
 # Evaluate on KITTI RAW
 python3 eval.py --type static --split raw --model_path <path to the model directory> --data_path ./datasets/kitti/raw/
 
-# Evaluate on Argoverse Tracking v1.0 (Static)
+# Evaluate on Argoverse Tracking v1.0 (Road)
 python3 eval.py --type static --split argo --model_path <path to the model directory> --data_path ./datasets/kitti/argoverse/
 
-# Evaluate on Argoverse Tracking v1.0 (Dynamic)
+# Evaluate on Argoverse Tracking v1.0 (Vehicle)
 python3 eval.py --type dynamic --split argo --model_path <path to the model directory> --data_path ./datasets/kitti/argoverse
 ```
 4. The results are in "output" (default: ./output)
@@ -145,13 +145,20 @@ python3 eval.py --type dynamic --split argo --model_path <path to the model dire
 
 The following table provides links to the [pre-trained models](https://drive.google.com/drive/folders/1PK9yiKdsXmoH53xP-As0h5n0LyBSgTGN?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) for each dataset mentioned in our paper. The table also shows the corresponding evaluation results for these models.
 
-| Dataset            | Model Type | mIOU(%) | mAP(%)| Pretrained Model                                                                                                       | 
+| Dataset            | Segmentation Objects | mIOU(%) | mAP(%)| Pretrained Model                                                                                                       | 
 | :--------:           | :-----:     | :----:   | :----: | :----:                                                                                                                 |
-| KITTI 3DObject     | Dynamic    |  38.85  | 51.04 | [link](https://drive.google.com/drive/folders/1XipKf-fLdpikyuQrSjWVrI_TIiZFy7HO?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
-| KITTI Odometry     | Static     |  77.47  | 86.39 | [link](https://drive.google.com/drive/folders/1eQmDOvI6_iWKRaILAJ2XMA-GmlyjkgX1?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
-| KITTI Raw          | Static     |  68.26  | 79.65 | [link](https://drive.google.com/drive/folders/1VuwZtN9IPtKIAya9N_33WWVMfW8HOzu5?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
-| Argoverse Tracking | Dynamic    |  47.87  | 62.69 | [link](https://drive.google.com/drive/folders/1SFIwQ94IFc1Rg4SxUsGNabp4jDUPCSot?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
-| Argoverse Tracking | Dynamic    |  76.56  | 87.30 | [link](https://drive.google.com/drive/folders/1w5aTi0XQYbg3myWlmy89knA0gtp6fced?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
+| KITTI 3D Object     | Vehicle    |  38.85  | 51.04 | [link](https://drive.google.com/drive/folders/1XipKf-fLdpikyuQrSjWVrI_TIiZFy7HO?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
+| KITTI Odometry     | Road     |  77.47  | 86.39 | [link](https://drive.google.com/drive/folders/1eQmDOvI6_iWKRaILAJ2XMA-GmlyjkgX1?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
+| KITTI Raw          | Road     |  68.26  | 79.65 | [link](https://drive.google.com/drive/folders/1VuwZtN9IPtKIAya9N_33WWVMfW8HOzu5?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
+| Argoverse Tracking | Vehicle    |  47.87  | 62.69 | [link](https://drive.google.com/drive/folders/1SFIwQ94IFc1Rg4SxUsGNabp4jDUPCSot?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
+| Argoverse Tracking | Road    |  76.56  | 87.30 | [link](https://drive.google.com/drive/folders/1w5aTi0XQYbg3myWlmy89knA0gtp6fced?usp=sharing&fileGuid=3X8QJDGGJPXyQgW9) |
 
 ## Results
 ![图片](./images/result.png)
+
+## Contact
+If you meet any problems, please describe them in issues or contact:
+* Weixiang Yang: [weixiang_yang@foxmail.com](weixiang_yang@foxmail.com)
+
+## License
+Cross-view itself is released under the MIT License (refer to the LICENSE file for details).This project partially depends on the sources of [Monolayout](https://github.com/hbutsuak95/monolayout)
