@@ -1,7 +1,7 @@
 # Projecting Your View Attentively: Monocular Road Scene Layout Estimation via Cross-view Transformation
 #### Weixiang Yang, Qi Li, Wenxi Liu, Yuanlong Yu, Yuexin Ma, Shengfeng He, Jia Pan
 
-#### Paper
+#### [Paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Yang_Projecting_Your_View_Attentively_Monocular_Road_Scene_Layout_Estimation_via_CVPR_2021_paper.pdf)
 
 #### Accepted to CVPR 2021
 
